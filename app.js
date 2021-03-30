@@ -1,12 +1,15 @@
-const express = require('express')
-const app = express()
+const express = require('express');
+const app = express();
+const bodyParser = require('body-parser');
+const stackRouter = require('./app/routes/api/stack.route');
 
-app.set('port', process.env.PORT || 3000);
+const DEFAULT_PORT = 3000;
 
-app.get('/', (req, res) => {
-  res.send('')
-})
+app.use(bodyParser.json())
+app.use('/api/stack', stackRouter);
+
+app.set('port', process.env.PORT || DEFAULT_PORT);
 
 app.listen(app.get('port'), () => {
-  console.log(`Listening at http://localhost:` + app.get('port'))
+  console.log(`Listening at http://localhost:` + app.get('port'));
 })

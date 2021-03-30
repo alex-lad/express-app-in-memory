@@ -14,4 +14,4 @@ COPY --chown=node:node . .
 
 EXPOSE $PORT
 
-CMD [ "node", "app.js" ]
+CMD [ "npm", "start" ]
