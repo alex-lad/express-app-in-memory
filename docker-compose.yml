@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  node:
+    build:
+      context: .
+    container_name: node
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - ${PORT}:${PORT}
+    volumes:
+      - .:${HOME}
+      - node_modules:${HOME}/node_modules
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  node_modules:
