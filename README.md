@@ -2,5 +2,6 @@
 
 ## Setup
 * Run `npm install`
-* Copy `.env-example` file into `.env`
 * Run `docker-compose up -d`
+
+The `.env` file will be created automatically. Change variables there if necessary.

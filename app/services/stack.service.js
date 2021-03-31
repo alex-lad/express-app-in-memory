@@ -4,7 +4,7 @@ class StackService {
   }
 
   pop() {
-    this.stack.pop();
+    return this.stack.pop();
   }
 
   push(item) {

@@ -1,23 +1,20 @@
+const {StatusCodes} = require('http-status-codes')
 const stackService = require('../services/stack.service')
 
 class StackController {
   pop(req, res) {
-    stackService.pop();
+    let lastEl = stackService.pop();
 
-    return res.status(200).json({
-      status: 200,
-      data: stackService.stack,
-      message: "OK",
+    return res.status(StatusCodes.OK).json({
+      data: lastEl || {},
     });
   }
 
   push(req, res) {
-    stackService.push(req.body.data);
+    stackService.push(req.body.data.item);
 
-    return res.status(200).json({
-      status: 200,
+    return res.status(StatusCodes.CREATED).json({
       data: stackService.stack,
-      message: "OK",
     });
   }
 }
