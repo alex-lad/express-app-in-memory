@@ -5,7 +5,7 @@ class StackController {
   pop(req, res) {
     let lastEl = stackService.pop();
 
-    return res.status(StatusCodes.OK).json({
+    return res.status(lastEl ? StatusCodes.OK : StatusCodes.NOT_FOUND).json({
       data: lastEl || {},
     });
   }

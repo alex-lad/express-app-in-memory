@@ -5,7 +5,7 @@ class TTLController {
   getByKey(req, res) {
     let el = ttlService.getByKey(req.query.key);
 
-    return res.status(StatusCodes.OK).json({
+    return res.status(el ? StatusCodes.OK : StatusCodes.NOT_FOUND).json({
       data: el || {},
     });
   }
