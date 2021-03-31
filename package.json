@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "preinstall": "cp -n .env.example .env",
     "start": "node app.js",
     "test": "mocha ./app/tests/*.test.js --config .mocharc.json"
   },

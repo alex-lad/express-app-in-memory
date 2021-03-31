@@ -21,7 +21,7 @@ describe('In-memory key-value store with TTL', () => {
       .post(ROUTE_API_TTL)
       .send(getRequestData(TEST_ITEM_NAME_KEY, TEST_ITEM_NAME_VALUE))
       .end((err, res) => {
-        res.should.have.status(StatusCodes.CREATED);
+        res.should.have.status(StatusCodes.OK);
         res.body.should.be.a('object');
         res.body.data.name.value.should.equal(TEST_ITEM_NAME_VALUE);
         done();
@@ -57,7 +57,7 @@ describe('In-memory key-value store with TTL', () => {
       .post(ROUTE_API_TTL)
       .send(getRequestData(TEST_ITEM_NAME_KEY, TEST_ITEM_NAME_NEW_VALUE, TEST_ITEM_NAME_TTL))
       .end((err, res) => {
-        res.should.have.status(StatusCodes.CREATED);
+        res.should.have.status(StatusCodes.OK);
         res.body.should.be.a('object');
         res.body.data.name.value.should.equal(TEST_ITEM_NAME_NEW_VALUE);
         res.body.data.name.ttl.should.equal(TEST_ITEM_NAME_TTL);

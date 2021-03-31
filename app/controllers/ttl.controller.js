@@ -15,7 +15,7 @@ class TTLController {
 
     ttlService.store(data.key, data.value, data.ttl);
 
-    return res.status(StatusCodes.CREATED).json({
+    return res.status(StatusCodes.OK).json({
       data: Object.fromEntries(ttlService.map),
     });
   }
