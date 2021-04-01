@@ -1,4 +1,4 @@
-# test-task-express-app
+# express-app-in-memory
 
 ## Setup
 * Copy `.env-example` file into `.env`
